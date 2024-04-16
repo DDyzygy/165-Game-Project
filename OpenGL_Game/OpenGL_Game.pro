@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = game_name
+TARGET = space game
 
 QT = core gui opengl
 

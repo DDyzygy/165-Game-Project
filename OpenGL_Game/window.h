@@ -7,7 +7,7 @@ class window : public QWidget
 {
     Q_OBJECT
 public:
-    explicit window(QWidget *parent = nullptr);
+    explicit window(QWidget *parent = 0);
 
 signals:
 };
