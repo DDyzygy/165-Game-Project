@@ -116,6 +116,9 @@ void display_func( void )
 		glVertex2f( 0.25f, 0.4f );
 	glEnd();
 
+	
+	
+
 	glutSwapBuffers();
 }
 
