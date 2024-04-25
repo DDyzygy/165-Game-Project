@@ -132,13 +132,17 @@
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="keyboardFunc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="keyboardFunc.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
