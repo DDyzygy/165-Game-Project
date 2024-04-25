@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="images.cpp" />
     <ClCompile Include="keyboardFunc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
@@ -140,9 +141,13 @@
   <ItemGroup>
     <ClInclude Include="actor.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="images.h" />
     <ClInclude Include="keyboardFunc.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="renderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\spacebackground.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

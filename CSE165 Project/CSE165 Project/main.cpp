@@ -2,6 +2,7 @@
 #include <SDL_image.h>
 #include <iostream>
 #include "renderer.h"
+#include "images.h"
 
 //=============================================================
 // SDL Documentation
