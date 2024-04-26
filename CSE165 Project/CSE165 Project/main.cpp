@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
+#include <vector>
 #include "renderer.h"
 #include "images.h"
 
@@ -54,6 +55,8 @@ void init(void)
 
 }
 
+
+
 //=============================================================
 // Main
 //=============================================================
@@ -66,10 +69,17 @@ int main(int argc, char** argv)
 	{
 		renderer r;
 		keyboardFunc user; // maybe rename class
+		std::vector<images> textures;
 		r.render_start();
+		images ship("images/PlayerShip1.png", r.getRenderer(), 100, 100, 800, 550);
+		images background("images/spacebackground.jpg", r.getRenderer(), 100, 100, 300, 100);
 
 		//Need to create loop to keep everything going
-		r.render_loop(user);
+		textures.push_back(ship);
+		textures.push_back(background);
+
+		r.render_loop(user, ship, textures);
+
 	}
 
 	SDLSHUTDOWN(); // destroys subsystems on exit so no leaks or something

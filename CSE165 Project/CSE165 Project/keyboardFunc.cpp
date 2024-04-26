@@ -19,6 +19,10 @@ void keyboardFunc::input()
 			{
 				std::cout << "pressing a" << std::endl; // move left
 			}
+			if (SDLK_s == event.key.keysym.sym)
+			{
+				std::cout << "pressing s" << std::endl; // move back
+			}
 			if (SDLK_SPACE == event.key.keysym.sym) 
 			{
 				std::cout << "pressing spacebar" << std::endl; // shoot
@@ -37,6 +41,10 @@ void keyboardFunc::input()
 			if (SDLK_a == event.key.keysym.sym)
 			{
 				std::cout << "released a" << std::endl; // stop moving left
+			}
+			if (SDLK_s == event.key.keysym.sym)
+			{
+				std::cout << "released s" << std::endl; // stop moving back
 			}
 			if (SDLK_SPACE == event.key.keysym.sym)
 			{

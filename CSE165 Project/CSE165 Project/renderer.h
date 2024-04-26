@@ -1,6 +1,8 @@
 #pragma once
 #include <SDL.h>
+#include <vector>
 #include "keyboardFunc.h"
+#include "images.h"
 
 class renderer
 {
@@ -20,7 +22,11 @@ public:
 	renderer();
 	~renderer();
 
-	void render_loop(keyboardFunc);
+	SDL_Renderer* getRenderer();
+
+	SDL_Window* getWindow();
+
+	void render_loop(keyboardFunc, images, std::vector<images>);
 	
 	void render_start();
 

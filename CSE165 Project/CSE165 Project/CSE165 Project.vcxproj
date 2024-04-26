@@ -147,6 +147,7 @@
     <ClInclude Include="renderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\Sprites\PlayerShip1.png" />
     <Image Include="images\spacebackground.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

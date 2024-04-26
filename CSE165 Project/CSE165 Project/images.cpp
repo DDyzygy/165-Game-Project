@@ -1,8 +1,5 @@
 #include "images.h"
-
-
-
-
+#include <vector>
 
 	
 images::images(std::string _jpg, SDL_Renderer* _renderer, int _sizeX, int _sizeY, int _posX, int _posY) {
@@ -21,7 +18,7 @@ images::images(std::string _jpg, SDL_Renderer* _renderer, int _sizeX, int _sizeY
 	}
 
 	texture = SDL_CreateTextureFromSurface(renderer, jpg);
-
+	
 	if (!texture)
 	{
 		std::cout << "Texture failed: " << std::endl;

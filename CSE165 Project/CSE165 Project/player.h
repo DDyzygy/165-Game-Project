@@ -2,5 +2,10 @@
 #include "actor.h"
 class player : public actor
 {
+
+
+
+public:
+
 };
 
