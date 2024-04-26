@@ -69,16 +69,19 @@ int main(int argc, char** argv)
 	{
 		renderer r;
 		keyboardFunc user; // maybe rename class
-		std::vector<images> textures;
+		std::vector<images*> textures;
 		r.render_start();
-		images ship("images/PlayerShip1.png", r.getRenderer(), 100, 100, 800, 550);
-		images background("images/spacebackground.jpg", r.getRenderer(), 100, 100, 300, 100);
+		images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 500, 450);
+		images* background = new images("images/spacebackground.jpg", r.getRenderer(), 1600, 900, 800, 450);
 
 		//Need to create loop to keep everything going
 		textures.push_back(ship);
 		textures.push_back(background);
 
-		r.render_loop(user, ship, textures);
+
+		r.render_loop(user, textures);
+		
+		//r.render_loop(user, ship, background);
 
 	}
 

@@ -26,7 +26,7 @@ public:
 
 	SDL_Window* getWindow();
 
-	void render_loop(keyboardFunc, images, std::vector<images>);
+	void render_loop(keyboardFunc, std::vector<images*>);
 	
 	void render_start();
 

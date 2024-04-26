@@ -31,26 +31,26 @@ void renderer::render_start()
 	rndrer = SDL_CreateRenderer(SDL_GameWindow, -1, rendererFlags); // (Window, -1 is the first rendering driver to support flags, 0 or flags | together)
 }
 
-void renderer::render_loop(keyboardFunc action, images background, std::vector<images> textures)
+void renderer::render_loop(keyboardFunc action, std::vector<images*> textures)
 {
 	while (1)
 	{
+
 		SDL_SetRenderDrawColor(rndrer, 28, 9, 41, 212); // Set window background color
 		SDL_RenderClear(rndrer);
 		//background.show();
+		//second.show();
 		
 		for (int i = 0; i < 2; i++)
 		{
-			SDL_UpdateWindowSurface(SDL_GameWindow);
-			textures[i].show();
-			//std::cout << "texture drawn: " << i << std::endl;
-			//std::cout << textures[i].posX << std::endl;
+			textures[i]->show();
 		}
+
 		//SDL_UpdateWindowSurface(SDL_GameWindow);
 		
 		//======================================
 		// Replace this with keyboardFunc somehow 
-		
+		//maybe load a scene class into the render loop?
 		action.input();
 
 		//======================================
