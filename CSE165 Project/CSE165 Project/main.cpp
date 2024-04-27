@@ -4,6 +4,7 @@
 #include <vector>
 #include "renderer.h"
 #include "images.h"
+#include "scene.h"
 
 //=============================================================
 // SDL Documentation
@@ -70,16 +71,21 @@ int main(int argc, char** argv)
 		renderer r;
 		keyboardFunc user; // maybe rename class
 		std::vector<images*> textures;
+		std::vector<scene*> scenes;
 		r.render_start();
-		images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 500, 450);
-		images* background = new images("images/spacebackground.jpg", r.getRenderer(), 1600, 900, 800, 450);
+		images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 400, 650);
+		images* background = new images("images/spacebackground.jpg", r.getRenderer(), 800, 800, 400, 400);
+
+		scene* level1 = new scene(r.getRenderer());
+
+		scenes.push_back(level1);
 
 		//Need to create loop to keep everything going
-		textures.push_back(ship);
 		textures.push_back(background);
+		//textures.push_back(background);
 
 
-		r.render_loop(user, textures);
+		r.render_loop(user, ship, scenes, textures);
 		
 		//r.render_loop(user, ship, background);
 

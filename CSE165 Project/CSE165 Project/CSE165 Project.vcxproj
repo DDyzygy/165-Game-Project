@@ -137,6 +137,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
@@ -145,10 +146,15 @@
     <ClInclude Include="keyboardFunc.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="renderer.h" />
+    <ClInclude Include="scene.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Sprites\PlayerShip1.png" />
+    <Image Include="images\MajorEnemy.png" />
+    <Image Include="images\MinorEnemy.png" />
     <Image Include="images\spacebackground.jpg" />
+    <Image Include="images\SpaceRock.png" />
+    <Image Include="images\StartButton.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

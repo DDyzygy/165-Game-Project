@@ -1,8 +1,9 @@
 #include "keyboardFunc.h"
 #include <SDL.h>
 #include <iostream>
+#include "images.h"
 
-void keyboardFunc::input()
+void keyboardFunc::input(images* player) // Change images* to player* and then handle it with player.images.posX/Y
 {
 	SDL_Event event;
 
@@ -14,14 +15,24 @@ void keyboardFunc::input()
 			if (SDLK_w == event.key.keysym.sym)
 			{
 				std::cout << "pressing w" << std::endl; // move forwards
+				player->posY -= 4;
+
 			}
 			if (SDLK_a == event.key.keysym.sym)
 			{
 				std::cout << "pressing a" << std::endl; // move left
+				player->posX -= 4;
 			}
 			if (SDLK_s == event.key.keysym.sym)
 			{
 				std::cout << "pressing s" << std::endl; // move back
+				player->posY += 4;
+			}
+			if (SDLK_d == event.key.keysym.sym)
+			{
+				std::cout << "pressing d" << std::endl; // move right
+				player->posX += 4;
+
 			}
 			if (SDLK_SPACE == event.key.keysym.sym) 
 			{

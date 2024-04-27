@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <vector>
 #include "keyboardFunc.h"
+#include "scene.h"
 #include "images.h"
 
 class renderer
@@ -26,7 +27,7 @@ public:
 
 	SDL_Window* getWindow();
 
-	void render_loop(keyboardFunc, std::vector<images*>);
+	void render_loop(keyboardFunc, images*, std::vector<scene*>, std::vector<images*> );
 	
 	void render_start();
 

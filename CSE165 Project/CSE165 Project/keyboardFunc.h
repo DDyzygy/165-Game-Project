@@ -1,10 +1,10 @@
 #pragma once
-
+#include "images.h"
 
 class keyboardFunc
 {
 
-	void input(void);
+	void input(images*);
 
 public:
 

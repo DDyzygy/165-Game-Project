@@ -39,6 +39,9 @@
     <ClCompile Include="images.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -59,12 +62,27 @@
     <ClInclude Include="images.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\spacebackground.jpg">
       <Filter>Resource Files\images</Filter>
     </Image>
     <Image Include="..\..\Sprites\PlayerShip1.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\MajorEnemy.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\MinorEnemy.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\SpaceRock.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\StartButton.png">
       <Filter>Resource Files\images</Filter>
     </Image>
   </ItemGroup>
