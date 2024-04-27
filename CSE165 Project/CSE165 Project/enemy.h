@@ -4,8 +4,6 @@
 class enemy : public actor
 {
 
-	int randomPosition();
-
 public:
 
 	enemy(SDL_Renderer*, int i); // Handles minor enemy
