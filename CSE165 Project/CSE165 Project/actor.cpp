@@ -8,6 +8,7 @@ actor::actor(SDL_Renderer* r)
 
 	texture = new images("images/SpaceRock.png", r, 100, 100, 500, 450,1);
 	speed = 0;
+	shooting = false;
 
 }
 

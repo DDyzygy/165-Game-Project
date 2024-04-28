@@ -36,6 +36,7 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 			}
 			if (SDLK_SPACE == event.key.keysym.sym) 
 			{
+				ship->shooting = true;
 				std::cout << "pressing spacebar" << std::endl; // shoot
 			}
 			if (SDLK_ESCAPE == event.key.keysym.sym)

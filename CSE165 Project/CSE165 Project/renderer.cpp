@@ -45,13 +45,61 @@ void renderer::backgroundMove(std::vector<images*> background, int speed) {
 	}
 }
 
+void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets) {
+
+	if (playerShip->shooting == true) {
+		bullets.emplace_back(new bullet(playerShip, rndrer, 3, -1));
+		playerShip->shooting = false;
+	}
+
+
+	for (int i = 0; i < scenes[0]->actorList.size(); i++) {
+		if (scenes[0]->actorList[i]->shooting == true) {
+			bullets.emplace_back(new bullet(scenes[0]->actorList[i], rndrer, 3, 1));
+			scenes[0]->actorList[i]->shooting = false;
+		}
+	}
+
+	for (int i = 0; i < bullets.size(); i++) {
+		bullets[i]->movement();
+	}
+
+	for (int i = 0; i < bullets.size(); i++) {
+		if (bullets[i]->hit(playerShip, -1)) {
+			auto temp = bullets.begin() + i;
+			delete* temp;
+			bullets.erase(temp);
+			//lower players health here
+			continue;
+		}
+
+		if (bullets[i]->texture->posY > 800 || bullets[i]->texture->posY < 0) {
+			auto temp = bullets.begin() + i;
+			delete* temp;
+			bullets.erase(temp);
+			continue;
+		}
+
+
+		for (int j = 0; j < scenes[0]->actorList.size(); j++) {
+			if (bullets[i]->hit(scenes[0]->actorList[j], 1)) {
+				auto temp = bullets.begin() + i;
+				delete* temp;
+				bullets.erase(temp); 
+				//lower actor j's health here
+				break;
+			}
+		}
+	}
+}
+
 
 
 void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<scene*> scenes, std::vector<images*> textures)
 {
 
 	std::vector<bullet*> bullets;
-	bullet* test = new bullet(scenes[0]->actorList[1], rndrer, 3 , -1 );
+	
 
 	while (1)
 	{	
@@ -65,25 +113,25 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		//background.show();
 		//second.show();
 		backgroundMove(textures, 3);
-		test->movement();
-		test->hit(scenes[0]->actorList[0], 1);
-
-
-
-
 		
+		shooting(scenes, playerShip, bullets);
+
 		for (int i = 0; i < 2; i++)
 		{
 			textures[i]->show();
 		}
 
 		playerShip->texture->show();
-		test->texture->show();
 
 		for (int j = 0; j < scenes[0]->actorList.size(); j++)
 		{
 			scenes[0]->actorList[j]->texture->show();
 		}
+
+		for (int i = 0; i < bullets.size(); i++) {
+			bullets[i]->texture->show();
+		}
+
 
 		
 

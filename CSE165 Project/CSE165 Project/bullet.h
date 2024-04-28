@@ -18,7 +18,7 @@ public:
 
 	bullet(actor* ship, SDL_Renderer* r, int _speed, int _side);
 
-	void hit(actor* ship, int _side);
+	bool hit(actor* ship, int _side);
 
 	void movement();
 

@@ -32,7 +32,7 @@ public:
 
 	void render_loop(keyboardFunc, player*, std::vector<scene*>, std::vector<images*> );
 
-
+	void shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets);
 
 	void backgroundMove(std::vector<images*> background, int speed);
 

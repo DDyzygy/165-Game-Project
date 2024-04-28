@@ -4,17 +4,17 @@
 bullet::bullet(actor* ship, SDL_Renderer* r, int _speed, int _side) {
 	speed = _speed;
 	side = _side;
-	texture = new images("images/bullet.png", r, 10, 30, ship->texture->posX, ship->texture->posY + side*ship->texture->sizeY, 1);
+	texture = new images("images/bullet.png", r, 6, 30, ship->texture->posX, ship->texture->posY + side*ship->texture->sizeY - 50*side, 3);
 
 }
 
-void bullet::hit(actor* ship, int _side) {
-
-
+bool bullet::hit(actor* ship, int _side) {
 
 	if (SDL_HasIntersection(&(ship->texture->area), &(texture->area)) && side != _side) {
-		std::cout << "hit" << std::endl;
+		std::cout << "balls" << std::endl;
+		return true;
 	}
+	return false;
 }
 
 void bullet::movement() {

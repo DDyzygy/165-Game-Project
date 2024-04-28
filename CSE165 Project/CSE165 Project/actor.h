@@ -12,7 +12,7 @@ protected:
 	int speed;
 
 public:
-
+	bool shooting;
 	images* texture;
 
 	actor();
