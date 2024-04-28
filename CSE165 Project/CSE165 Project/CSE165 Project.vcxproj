@@ -143,6 +143,35 @@
     <ClInclude Include="keyboardFunc.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="renderer.h" />
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Sprites\PlayerShip1.png" />
+    <Image Include="images\0.png" />
+    <Image Include="images\1.png" />
+    <Image Include="images\2.png" />
+    <Image Include="images\3.png" />
+    <Image Include="images\4.png" />
+    <Image Include="images\5.png" />
+    <Image Include="images\6.png" />
+    <Image Include="images\7.png" />
+    <Image Include="images\8.png" />
+    <Image Include="images\9.png" />
+    <Image Include="images\bullet.png" />
+    <Image Include="images\EnemyBullet.png" />
+    <Image Include="images\MajorEnemy.png" />
+    <Image Include="images\MinorEnemy.png" />
+    <Image Include="images\NoHitPoint.png" />
+    <Image Include="images\OneHitPoint.png" />
+    <Image Include="images\PlayerBullet.png" />
+    <Image Include="images\PointsText.png" />
+    <Image Include="images\spacebackground.jpg" />
+    <Image Include="images\spacebackgrounddouble.jpg" />
+    <Image Include="images\SpaceRock.png" />
+    <Image Include="images\StartButton.png" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

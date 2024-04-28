@@ -50,5 +50,91 @@
     <ClInclude Include="keyboardFunc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="images.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\spacebackground.jpg">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="..\..\Sprites\PlayerShip1.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\MajorEnemy.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\MinorEnemy.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\SpaceRock.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\StartButton.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\spacebackgrounddouble.jpg">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\bullet.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\EnemyBullet.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\PlayerBullet.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\NoHitPoint.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\OneHitPoint.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\0.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\1.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\2.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\3.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\4.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\5.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\6.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\7.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\8.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\9.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\PointsText.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+>>>>>>> Stashed changes
   </ItemGroup>
 </Project>
