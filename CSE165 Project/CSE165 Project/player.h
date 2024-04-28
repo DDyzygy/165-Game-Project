@@ -2,7 +2,7 @@
 #include "actor.h"
 class player : public actor
 {
-
+	Timer shootCooldown;
 
 
 public:

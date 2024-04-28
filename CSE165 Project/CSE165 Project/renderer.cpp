@@ -48,14 +48,16 @@ void renderer::backgroundMove(std::vector<images*> background, int speed) {
 
 void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets) {
 
-	if (playerShip->shooting == true) {
-		bullets.emplace_back(new bullet(playerShip, rndrer, 6, -1));
+	if (playerShip->shooting == true && playerShip->getTime() >= playerShip->getCooldown()) {
+		bullets.emplace_back(new bullet(playerShip, "images/bullet.png", rndrer, 6, -1));
+		playerShip->resetTimer();
 		playerShip->shooting = false;
 	}
 	for (int i = 0; i < scenes[0]->actorList.size(); i++) {
 
-		if (scenes[0]->actorList[i]->shooting == true) {
-			bullets.emplace_back(new bullet(scenes[0]->actorList[i], rndrer, 6, -1, 0));
+		if (scenes[0]->actorList[i]->getTime() >= scenes[0]->actorList[i]->getCooldown()) {
+			bullets.emplace_back(new bullet(scenes[0]->actorList[i], "images/EnemyBullet.png", rndrer, 6, 1));
+			scenes[0]->actorList[i]->resetTimer();
 			scenes[0]->actorList[i]->shooting = false;
 		}
 	}
@@ -133,14 +135,12 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 			textures[i]->show();
 		}
 		
-		test.Count();
 
-		std::cout << test.getTime() << std::endl;
+		//std::cout << test.getTime() << std::endl;
 
 		if (test.getTime() >= 5) {
 			test.resetTimer();
 		}
-
 
 
 
