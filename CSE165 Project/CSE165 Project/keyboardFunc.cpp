@@ -20,6 +20,7 @@ keyboardFunc::~keyboardFunc()
 void keyboardFunc::input(player* ship) // Change images* to player* and then handle it with player.images.posX/Y
 {
 	SDL_Event event;
+	
 
 	while (SDL_PollEvent(&event))
 	{
@@ -52,9 +53,10 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 				//std::cout << "pressing d" << std::endl; // move right
 				//ship->texture->posX += ship->getSpeed();
 			}
-			if (SDLK_SPACE == event.key.keysym.sym) 
+			if (SDLK_SPACE == event.key.keysym.sym)
 			{
 				space = true;
+
 				//ship->shooting = true;
 				//std::cout << "pressing spacebar" << std::endl; // shoot
 			}

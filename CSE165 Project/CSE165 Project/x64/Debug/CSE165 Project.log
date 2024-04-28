@@ -1,7 +1,24 @@
-﻿  renderer.cpp
+﻿  actor.cpp
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(43,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(44,19): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(51,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(70,9): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  bullet.cpp
+  enemy.cpp
+  images.cpp
+  keyboardFunc.cpp
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(109,44): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(121,44): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(133,44): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(145,44): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  main.cpp
+  player.cpp
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\player.cpp(20,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  renderer.cpp
+  scene.cpp
   Timer.cpp
-C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\Timer.cpp(4,26): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
-C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\Timer.cpp(8,28): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
-C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\Timer.cpp(16,26): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\Timer.cpp(4,26): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\Timer.cpp(8,28): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\Timer.cpp(13,26): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
   Generating Code...
-  CSE165 Project.vcxproj -> C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\x64\Debug\CSE165 Project.exe
+  CSE165 Project.vcxproj -> C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\x64\Debug\CSE165 Project.exe

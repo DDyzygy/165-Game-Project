@@ -13,8 +13,6 @@ public:
 
 	float getTime();
 
-	void Count();
-
 	void resetTimer();
 
 	~Timer();

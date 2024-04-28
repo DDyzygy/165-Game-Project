@@ -61,3 +61,16 @@ bool actor::getShown()
 {
 	return shown;
 }
+
+float actor::getTime() {
+	return currentCooldown.getTime();
+}
+
+float actor::getCooldown() {
+	return cooldown;
+}
+
+
+void actor::resetTimer() {
+	currentCooldown.resetTimer();
+}
