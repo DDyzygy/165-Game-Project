@@ -115,10 +115,10 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 
 	std::vector<bullet*> bullets;
 	
+	Timer test;
 
 	while (1)
 	{	
-
 
 		SDL_SetRenderDrawColor(rndrer, 28, 9, 41, 212); // Set window background color
 		SDL_RenderClear(rndrer);
@@ -132,6 +132,18 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		{
 			textures[i]->show();
 		}
+		
+		test.Count();
+
+		std::cout << test.getTime() << std::endl;
+
+		if (test.getTime() >= 5) {
+			test.resetTimer();
+		}
+
+
+
+
 
 
 

@@ -9,9 +9,9 @@ images::images(std::string _jpg, SDL_Renderer* _renderer, int _sizeX, int _sizeY
 	posX = _posX;
 	posY = _posY;
 	layer = _layer;
-	area = { posX - sizeX / 2, posY - sizeY / 2, sizeX, sizeY };
+	area = { posX - sizeX / 2, posY - sizeY / 2, sizeX, sizeY }; //sets the area of the rectangle based on size and position
 
-	SDL_Surface* jpg = IMG_Load(_jpg.c_str());
+	SDL_Surface* jpg = IMG_Load(_jpg.c_str()); //uses the name of the image to get a SDL_Surface of said image
 
 	if (!jpg)
 	{
@@ -19,7 +19,7 @@ images::images(std::string _jpg, SDL_Renderer* _renderer, int _sizeX, int _sizeY
 
 	}
 
-	texture = SDL_CreateTextureFromSurface(renderer, jpg);
+	texture = SDL_CreateTextureFromSurface(renderer, jpg); //uses the SDL_Surface and the renderer to create an SDL_texture of the image
 	
 	if (!texture)
 	{
@@ -27,16 +27,16 @@ images::images(std::string _jpg, SDL_Renderer* _renderer, int _sizeX, int _sizeY
 
 	}
 
-	SDL_FreeSurface(jpg);
+	SDL_FreeSurface(jpg); //destroys the unneeded image after it has been rendered to the texture
 }
 
 void images::show(){
-	area = { posX - sizeX / 2, posY - sizeY / 2, sizeX, sizeY };
-	SDL_RenderCopy(renderer, texture, NULL, &area);
+	area = { posX - sizeX / 2, posY - sizeY / 2, sizeX, sizeY }; //updates area of rectangle based on current size and position
+	SDL_RenderCopy(renderer, texture, NULL, &area); //renders the area of the rectangle with the current texture in it
 }
 
 images::~images() {
-	SDL_DestroyTexture(texture);
+	SDL_DestroyTexture(texture); //removes the texture on deletion
 }
 
 

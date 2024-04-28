@@ -25,6 +25,7 @@ enemy::enemy(SDL_Renderer* r, int x, int y, int ignorethis)
 
 }
 
+
 enemy::~enemy()
 {
 	SDL_DestroyTexture(texture->texture);

@@ -7,6 +7,7 @@
 #include "images.h"
 #include "bullet.h"
 #include "player.h"
+#include "Timer.h"
 
 class renderer
 {
