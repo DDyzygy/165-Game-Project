@@ -12,26 +12,27 @@ void keyboardFunc::input(images* player) // Change images* to player* and then h
 		switch (event.type)
 		{
 		case SDL_KEYDOWN:
-			if (SDLK_w == event.key.keysym.sym)
+
+			if (SDLK_w == event.key.keysym.sym && player->posY > 100)
 			{
 				std::cout << "pressing w" << std::endl; // move forwards
-				player->posY -= 4;
+				player->posY -= 8;
 
 			}
-			if (SDLK_a == event.key.keysym.sym)
+			if (SDLK_a == event.key.keysym.sym && player->posX > 40)
 			{
 				std::cout << "pressing a" << std::endl; // move left
-				player->posX -= 4;
+				player->posX -= 8;
 			}
-			if (SDLK_s == event.key.keysym.sym)
+			if (SDLK_s == event.key.keysym.sym && player->posY < 740)
 			{
 				std::cout << "pressing s" << std::endl; // move back
-				player->posY += 4;
+				player->posY += 8;
 			}
-			if (SDLK_d == event.key.keysym.sym)
+			if (SDLK_d == event.key.keysym.sym && player->posX < 760)
 			{
 				std::cout << "pressing d" << std::endl; // move right
-				player->posX += 4;
+				player->posX += 8;
 
 			}
 			if (SDLK_SPACE == event.key.keysym.sym) 

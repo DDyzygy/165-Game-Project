@@ -42,6 +42,9 @@
     <ClCompile Include="scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -65,6 +68,9 @@
     <ClInclude Include="scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\spacebackground.jpg">
@@ -83,6 +89,12 @@
       <Filter>Resource Files\images</Filter>
     </Image>
     <Image Include="images\StartButton.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\spacebackgrounddouble.jpg">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\bullet.png">
       <Filter>Resource Files\images</Filter>
     </Image>
   </ItemGroup>

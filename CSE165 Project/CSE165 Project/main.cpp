@@ -2,9 +2,11 @@
 #include <SDL_image.h>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "renderer.h"
 #include "images.h"
 #include "scene.h"
+#include "bullet.h"
 
 //=============================================================
 // SDL Documentation
@@ -73,14 +75,16 @@ int main(int argc, char** argv)
 		std::vector<images*> textures;
 		std::vector<scene*> scenes;
 		r.render_start();
-		images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 400, 650);
-		images* background = new images("images/spacebackground.jpg", r.getRenderer(), 800, 800, 400, 400);
+		images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 400, 650,1);
+		images* background = new images("images/spacebackground.jpg", r.getRenderer(), 800, 800, 400, 400,1);
 
 		scene* level1 = new scene(r.getRenderer());
 
 		scenes.push_back(level1);
 
 		//Need to create loop to keep everything going
+		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, 800, 0));
+		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, -800, 0));
 		textures.push_back(background);
 		//textures.push_back(background);
 

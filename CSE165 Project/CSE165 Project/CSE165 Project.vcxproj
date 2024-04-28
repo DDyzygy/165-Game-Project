@@ -131,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
+    <ClCompile Include="bullet.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="images.cpp" />
     <ClCompile Include="keyboardFunc.cpp" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
+    <ClInclude Include="bullet.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="images.h" />
     <ClInclude Include="keyboardFunc.h" />
@@ -150,9 +152,11 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Sprites\PlayerShip1.png" />
+    <Image Include="images\bullet.png" />
     <Image Include="images\MajorEnemy.png" />
     <Image Include="images\MinorEnemy.png" />
     <Image Include="images\spacebackground.jpg" />
+    <Image Include="images\spacebackgrounddouble.jpg" />
     <Image Include="images\SpaceRock.png" />
     <Image Include="images\StartButton.png" />
   </ItemGroup>

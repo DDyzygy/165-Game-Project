@@ -36,28 +36,59 @@ void renderer::render_start()
 	rndrer = SDL_CreateRenderer(SDL_GameWindow, -1, rendererFlags); // (Window, -1 is the first rendering driver to support flags, 0 or flags | together)
 }
 
+void renderer::backgroundMove(std::vector<images*> background, int speed) {
+	for (int i = 0; i < 2; i++) {
+		if (background[i]->posY >= 1600) {
+			background[i]->posY = -1200;
+		}
+		background[i]->posY += speed;
+	}
+}
+
+
+
 void renderer::render_loop(keyboardFunc action, images* playerShip, std::vector<scene*> scenes, std::vector<images*> textures)
 {
+
+	std::vector<bullet*> bullets;
+	bullet* test = new bullet(scenes[0]->actorList[1], rndrer, 3 , -1 );
+
 	while (1)
-	{
+	{	
+
+
+
+
+
+
+
 
 		SDL_SetRenderDrawColor(rndrer, 28, 9, 41, 212); // Set window background color
 		SDL_RenderClear(rndrer);
 		//background.show();
 		//second.show();
+		backgroundMove(textures, 3);
+		test->movement();
+		test->hit(scenes[0]->actorList[0], 1);
+
+
+
+
 		
-		for (int i = 0; i < 1; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			textures[i]->show();
 		}
 
 		playerShip->show();
-
+		test->texture->show();
 
 		for (int j = 0; j < scenes[0]->actorList.size(); j++)
 		{
 			scenes[0]->actorList[j]->texture->show();
 		}
+
+		
 
 		//SDL_UpdateWindowSurface(SDL_GameWindow);
 		

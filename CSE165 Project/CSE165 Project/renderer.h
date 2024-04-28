@@ -1,9 +1,11 @@
 #pragma once
 #include <SDL.h>
 #include <vector>
+#include <algorithm>
 #include "keyboardFunc.h"
 #include "scene.h"
 #include "images.h"
+#include "bullet.h"
 
 class renderer
 {
@@ -28,7 +30,11 @@ public:
 	SDL_Window* getWindow();
 
 	void render_loop(keyboardFunc, images*, std::vector<scene*>, std::vector<images*> );
-	
+
+
+
+	void backgroundMove(std::vector<images*> background, int speed);
+
 	void render_start();
 
 };
