@@ -87,6 +87,9 @@ int main(int argc, char** argv)
 		//Need to create loop to keep everything going
 		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, 800, 0));
 		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, -800, 0));
+		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 50, 40, 1));
+		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 75, 40, 1));
+		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 100, 40, 1));
 		textures.push_back(background);
 		//textures.push_back(background);
 

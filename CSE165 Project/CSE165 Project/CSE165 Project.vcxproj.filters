@@ -97,5 +97,17 @@
     <Image Include="images\bullet.png">
       <Filter>Resource Files\images</Filter>
     </Image>
+    <Image Include="images\EnemyBullet.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\PlayerBullet.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\NoHitPoint.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\OneHitPoint.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

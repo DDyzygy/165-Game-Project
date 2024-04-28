@@ -153,8 +153,12 @@
   <ItemGroup>
     <Image Include="..\..\Sprites\PlayerShip1.png" />
     <Image Include="images\bullet.png" />
+    <Image Include="images\EnemyBullet.png" />
     <Image Include="images\MajorEnemy.png" />
     <Image Include="images\MinorEnemy.png" />
+    <Image Include="images\NoHitPoint.png" />
+    <Image Include="images\OneHitPoint.png" />
+    <Image Include="images\PlayerBullet.png" />
     <Image Include="images\spacebackground.jpg" />
     <Image Include="images\spacebackgrounddouble.jpg" />
     <Image Include="images\SpaceRock.png" />

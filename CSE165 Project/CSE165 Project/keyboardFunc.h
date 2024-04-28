@@ -9,7 +9,14 @@ class keyboardFunc
 
 public:
 
+	bool w;
+	bool a;
+	bool s;
+	bool d;
+	bool space;
 
+	keyboardFunc();
+	~keyboardFunc();
 	friend class renderer;
 
 };

@@ -17,6 +17,7 @@ public:
 	int speed;
 
 	bullet(actor* ship, SDL_Renderer* r, int _speed, int _side);
+	bullet(actor* ship, SDL_Renderer* r, int _speed, int _side, int ignore);
 
 	bool hit(actor* ship, int _side);
 

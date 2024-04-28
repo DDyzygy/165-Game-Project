@@ -38,7 +38,8 @@ void renderer::render_start()
 
 void renderer::backgroundMove(std::vector<images*> background, int speed) {
 	for (int i = 0; i < 2; i++) {
-		if (background[i]->posY >= 1600) {
+		if (background[i]->posY >= 1600) 
+		{
 			background[i]->posY = -1200;
 		}
 		background[i]->posY += speed;
@@ -48,18 +49,25 @@ void renderer::backgroundMove(std::vector<images*> background, int speed) {
 void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets) {
 
 	if (playerShip->shooting == true) {
-		bullets.emplace_back(new bullet(playerShip, rndrer, 3, -1));
+		bullets.emplace_back(new bullet(playerShip, rndrer, 6, -1));
 		playerShip->shooting = false;
 	}
+	for (int i = 0; i < scenes[0]->actorList.size(); i++) {
 
+		if (scenes[0]->actorList[i]->shooting == true) {
+			bullets.emplace_back(new bullet(scenes[0]->actorList[i], rndrer, 6, -1, 0));
+			scenes[0]->actorList[i]->shooting = false;
+		}
+	}
 
+	/*
 	for (int i = 0; i < scenes[0]->actorList.size(); i++) {
 		if (scenes[0]->actorList[i]->shooting == true) {
 			bullets.emplace_back(new bullet(scenes[0]->actorList[i], rndrer, 3, 1));
 			scenes[0]->actorList[i]->shooting = false;
 		}
 	}
-
+	*/
 	for (int i = 0; i < bullets.size(); i++) {
 		bullets[i]->movement();
 	}
@@ -70,6 +78,8 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 			delete* temp;
 			bullets.erase(temp);
 			//lower players health here
+			playerShip->updateHitPoints();
+			
 			continue;
 		}
 
@@ -81,12 +91,17 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 		}
 
 
-		for (int j = 0; j < scenes[0]->actorList.size(); j++) {
+		for (int j = 0; j < scenes[0]->actorList.size(); j++) { // REMEMBER TO ChANGE SCENES[0] TO whatever we use later
 			if (bullets[i]->hit(scenes[0]->actorList[j], 1)) {
 				auto temp = bullets.begin() + i;
 				delete* temp;
 				bullets.erase(temp); 
 				//lower actor j's health here
+				scenes[0]->actorList[j]->updateHitPoints();
+				if (!scenes[0]->actorList[j]->checkState())
+				{
+					scenes[0]->actorList.erase(scenes[0]->actorList.begin() + j);
+				}
 				break;
 			}
 		}
@@ -105,9 +120,6 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 	{	
 
 
-
-
-
 		SDL_SetRenderDrawColor(rndrer, 28, 9, 41, 212); // Set window background color
 		SDL_RenderClear(rndrer);
 		//background.show();
@@ -116,26 +128,35 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		
 		shooting(scenes, playerShip, bullets);
 
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 5; i++)
 		{
 			textures[i]->show();
 		}
+
+
 
 		playerShip->texture->show();
 
 		for (int j = 0; j < scenes[0]->actorList.size(); j++)
 		{
-			scenes[0]->actorList[j]->texture->show();
+			if (!scenes[0]->actorList[j]->getShown())
+			{
+				scenes[0]->actorList[j]->texture->show();
+				scenes[0]->actorList[j]->setShown();
+			}
+			else
+			{
+				// use this with movement later so unshown enemies will stay in their spawn positions
+				scenes[0]->actorList[j]->texture->show();
+				scenes[0]->actorList[j]->shoot();
+				scenes[0]->actorList[j]->movement();
+			}
+		
 		}
 
 		for (int i = 0; i < bullets.size(); i++) {
 			bullets[i]->texture->show();
 		}
-
-
-		
-
-		//SDL_UpdateWindowSurface(SDL_GameWindow);
 		
 		//======================================
 		// Replace this with keyboardFunc somehow 

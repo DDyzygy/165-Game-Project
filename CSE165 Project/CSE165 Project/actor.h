@@ -9,7 +9,8 @@ protected:
 
 	//images* texture;
 	int hitPoints;
-	int speed;
+	double speed;
+	bool shown;
 
 public:
 	bool shooting;
@@ -19,8 +20,13 @@ public:
 	actor(SDL_Renderer*);
 	virtual ~actor();
 
-	void checkState();
-
+	bool checkState();
+	void updateHitPoints();
+	void movement();
+	void shoot();
+	void setShown();
+	bool getShown();
+	
 
 };
 
