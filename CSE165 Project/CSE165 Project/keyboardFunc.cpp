@@ -1,9 +1,8 @@
 #include "keyboardFunc.h"
 #include <SDL.h>
 #include <iostream>
-#include "images.h"
 
-void keyboardFunc::input(images* player) // Change images* to player* and then handle it with player.images.posX/Y
+void keyboardFunc::input(player* ship) // Change images* to player* and then handle it with player.images.posX/Y
 {
 	SDL_Event event;
 
@@ -13,26 +12,26 @@ void keyboardFunc::input(images* player) // Change images* to player* and then h
 		{
 		case SDL_KEYDOWN:
 
-			if (SDLK_w == event.key.keysym.sym && player->posY > 100)
+			if (SDLK_w == event.key.keysym.sym && ship->texture->posY > 100)
 			{
 				std::cout << "pressing w" << std::endl; // move forwards
-				player->posY -= 8;
+				ship->texture->posY -= ship->getSpeed();
 
 			}
-			if (SDLK_a == event.key.keysym.sym && player->posX > 40)
+			if (SDLK_a == event.key.keysym.sym && ship->texture->posX > 40)
 			{
 				std::cout << "pressing a" << std::endl; // move left
-				player->posX -= 8;
+				ship->texture->posX -= ship->getSpeed();
 			}
-			if (SDLK_s == event.key.keysym.sym && player->posY < 740)
+			if (SDLK_s == event.key.keysym.sym && ship->texture->posY < 740)
 			{
 				std::cout << "pressing s" << std::endl; // move back
-				player->posY += 8;
+				ship->texture->posY += ship->getSpeed();
 			}
-			if (SDLK_d == event.key.keysym.sym && player->posX < 760)
+			if (SDLK_d == event.key.keysym.sym && ship->texture->posX < 760)
 			{
 				std::cout << "pressing d" << std::endl; // move right
-				player->posX += 8;
+				ship->texture->posX += ship->getSpeed();
 
 			}
 			if (SDLK_SPACE == event.key.keysym.sym) 

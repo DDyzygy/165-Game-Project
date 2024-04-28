@@ -1,10 +1,11 @@
 #pragma once
 #include "images.h"
+#include "player.h"
 
 class keyboardFunc
 {
 
-	void input(images*);
+	void input(player*);
 
 public:
 

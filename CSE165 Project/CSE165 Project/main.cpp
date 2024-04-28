@@ -7,6 +7,7 @@
 #include "images.h"
 #include "scene.h"
 #include "bullet.h"
+#include "player.h"
 
 //=============================================================
 // SDL Documentation
@@ -75,8 +76,9 @@ int main(int argc, char** argv)
 		std::vector<images*> textures;
 		std::vector<scene*> scenes;
 		r.render_start();
-		images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 400, 650,1);
+		//images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 400, 650,1);
 		images* background = new images("images/spacebackground.jpg", r.getRenderer(), 800, 800, 400, 400,1);
+		player* player1 = new player(r.getRenderer());
 
 		scene* level1 = new scene(r.getRenderer());
 
@@ -89,7 +91,7 @@ int main(int argc, char** argv)
 		//textures.push_back(background);
 
 
-		r.render_loop(user, ship, scenes, textures);
+		r.render_loop(user, player1, scenes, textures);
 		
 		//r.render_loop(user, ship, background);
 

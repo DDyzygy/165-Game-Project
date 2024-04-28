@@ -6,6 +6,7 @@
 #include "scene.h"
 #include "images.h"
 #include "bullet.h"
+#include "player.h"
 
 class renderer
 {
@@ -29,7 +30,7 @@ public:
 
 	SDL_Window* getWindow();
 
-	void render_loop(keyboardFunc, images*, std::vector<scene*>, std::vector<images*> );
+	void render_loop(keyboardFunc, player*, std::vector<scene*>, std::vector<images*> );
 
 
 

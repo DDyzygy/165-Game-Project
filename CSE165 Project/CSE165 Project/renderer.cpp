@@ -47,7 +47,7 @@ void renderer::backgroundMove(std::vector<images*> background, int speed) {
 
 
 
-void renderer::render_loop(keyboardFunc action, images* playerShip, std::vector<scene*> scenes, std::vector<images*> textures)
+void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<scene*> scenes, std::vector<images*> textures)
 {
 
 	std::vector<bullet*> bullets;
@@ -55,9 +55,6 @@ void renderer::render_loop(keyboardFunc action, images* playerShip, std::vector<
 
 	while (1)
 	{	
-
-
-
 
 
 
@@ -80,7 +77,7 @@ void renderer::render_loop(keyboardFunc action, images* playerShip, std::vector<
 			textures[i]->show();
 		}
 
-		playerShip->show();
+		playerShip->texture->show();
 		test->texture->show();
 
 		for (int j = 0; j < scenes[0]->actorList.size(); j++)
