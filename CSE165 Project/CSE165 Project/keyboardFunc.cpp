@@ -10,6 +10,7 @@ keyboardFunc::keyboardFunc()
 	s = false;
 	d = false;
 	space = false;
+	click = false;
 }
 
 keyboardFunc::~keyboardFunc()
@@ -27,27 +28,27 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 		switch (event.type)
 		{
 		case SDL_KEYDOWN:
-			if (SDLK_w == event.key.keysym.sym && ship->texture->posY > 100)
+			if (SDLK_w == event.key.keysym.sym)
 			{
 				w = true;
 				//std::cout << "pressing w" << std::endl; // move forwards
 				//ship->texture->posY -= ship->getSpeed();
 
 			}
-			if (SDLK_a == event.key.keysym.sym && ship->texture->posX > 40)
+			if (SDLK_a == event.key.keysym.sym)
 			{
 				a = true;
 				//std::cout << "pressing a" << std::endl; // move left
 				//ship->texture->posX -= ship->getSpeed();
 			}
 
-			if (SDLK_s == event.key.keysym.sym && ship->texture->posY < 740)
+			if (SDLK_s == event.key.keysym.sym)
 			{
 				s = true;
 				//std::cout << "pressing s" << std::endl; // move back
 				//ship->texture->posY += ship->getSpeed();
 			}
-			if (SDLK_d == event.key.keysym.sym && ship->texture->posX < 760)
+			if (SDLK_d == event.key.keysym.sym)
 			{
 				d = true;
 				//std::cout << "pressing d" << std::endl; // move right
@@ -94,6 +95,12 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 			}
 			break;
 		
+		case SDL_MOUSEBUTTONDOWN:
+			if (event.button.button == SDL_BUTTON_LEFT) {
+				click = true;
+			}
+			break;
+
 		case SDL_QUIT:
 			exit(0);
 			break;
@@ -102,7 +109,7 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 			break;
 		}
 
-		if (w)
+		if (w && ship->texture->posY > 100)
 		{
 			if (a || d)
 			{
@@ -114,7 +121,7 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 			}
 			
 		}
-		if (a)
+		if (a && ship->texture->posX > 40)
 		{
 			if (w || s)
 			{
@@ -126,7 +133,7 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 			}
 			
 		}
-		if (s)
+		if (s && ship->texture->posY < 740)
 		{
 			if (a || d)
 			{
@@ -138,7 +145,7 @@ void keyboardFunc::input(player* ship) // Change images* to player* and then han
 			}
 			
 		}
-		if (d)
+		if (d && ship->texture->posX < 760)
 		{
 			if (w || s)
 			{

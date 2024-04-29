@@ -1,5 +1,3 @@
-﻿  main.cpp
-  renderer.cpp
-C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\renderer.cpp(314,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
-  CSE165 Project.vcxproj -> C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\x64\Debug\CSE165 Project.exe
+﻿  renderer.cpp
+C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\renderer.cpp(320,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  CSE165 Project.vcxproj -> C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\x64\Debug\CSE165 Project.exe

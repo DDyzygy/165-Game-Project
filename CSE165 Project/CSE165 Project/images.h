@@ -13,6 +13,7 @@ public:
 	int sizeX, sizeY, posX, posY, layer;
 
 	images(std::string _jpg, SDL_Renderer* _renderer, int _sizeX, int _sizeY, int _posX, int _posY, int layer);
+	images(images& i);
 
 	void show();
 

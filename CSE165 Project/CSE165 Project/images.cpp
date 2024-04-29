@@ -30,6 +30,17 @@ images::images(std::string _jpg, SDL_Renderer* _renderer, int _sizeX, int _sizeY
 	SDL_FreeSurface(jpg); //destroys the unneeded image after it has been rendered to the texture
 }
 
+images::images(images& i)
+{
+	renderer = i.renderer;
+	sizeX = i.sizeX;
+	sizeY = i.sizeY;
+	posX = i.posX;
+	posY = i.posY;
+	layer = i.layer;
+	area = i.area;
+}
+
 void images::show(){
 	area = { posX - sizeX / 2, posY - sizeY / 2, sizeX, sizeY }; //updates area of rectangle based on current size and position
 	SDL_RenderCopy(renderer, texture, NULL, &area); //renders the area of the rectangle with the current texture in it

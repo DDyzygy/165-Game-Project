@@ -87,7 +87,6 @@ int main(int argc, char** argv)
 		scenes.push_back(level2);
 		scenes.push_back(level3);
 
-		//Need to create loop to keep everything going
 		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, 800, 0));//0
 		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1620, 400, -800, 0));
 		textures.emplace_back(new images("images/PointsText.png", r.getRenderer(), 70, 70, 700, 40, 1));
@@ -112,8 +111,7 @@ int main(int argc, char** argv)
 		textures.emplace_back(new images("images/VictoryScreen.png", r.getRenderer(), 200, 66, 400, 400, 1));//21
 
 
-
-
+		//Need to create loop to keep everything going
 		r.render_loop(user, player1, scenes, textures);
 		
 		//r.render_loop(user, ship, background);

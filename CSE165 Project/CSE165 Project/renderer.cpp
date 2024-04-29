@@ -98,8 +98,8 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 				scenes[currentLevel]->actorList[j]->updateHitPoints();
 				if (!scenes[currentLevel]->actorList[j]->checkState())
 				{
+					playerShip->setPoints(scenes[currentLevel]->actorList[j]->getPoints());
 					scenes[currentLevel]->actorList.erase(scenes[currentLevel]->actorList.begin() + j);
-					//playerShip->setPoints(scenes[currentLevel]->actorList[j]->getPoints());
 				}
 				break;
 			}
@@ -115,13 +115,13 @@ void renderer::updatePoints(player*& playerShip, std::vector<images*> textures)
 	{
 		textures[9]->show();
 	}
-	else if (playerShip->getPoints() / 10 == 1)
+	else if (playerShip->getPoints() / 10 == 1 || playerShip->getPoints() / 10 == 10)
 	{
 		textures[10]->show();
 		textures[9]->posX = 760;
 		textures[9]->show();
 	}
-	else if (playerShip->getPoints() / 10 == 2)
+	else if (playerShip->getPoints() / 10 == 2 || playerShip->getPoints() / 10 == 11)
 	{
 		textures[11]->show();
 		textures[9]->posX = 760;
@@ -169,6 +169,7 @@ void renderer::updatePoints(player*& playerShip, std::vector<images*> textures)
 		
 		textures[9]->show();
 	}
+	//Would go over 100, but would need to load more instances of image, 
 	//textures[10]->show();
 
 	//textures[9]->show();
@@ -214,6 +215,7 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		SDL_RenderClear(rndrer);
 		//background.show();
 
+
 		switch (currentState) {
 			case 1:
 				for (int i = 0; i < 2; i++) // up to 2 loads background textures
@@ -222,8 +224,12 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 				}
 				textures[19]->show();
 				backgroundMove(textures, 1);
-				if (buttonPress(textures[19])) {
+				if (buttonPress(textures[19]) && action.click == true) {
 					currentState = 2;
+					action.click = false;
+				}
+				else {
+					action.click = false;
 				}
 
 				break;
@@ -266,14 +272,14 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 				//updatePoints(playerShip, textures);
 
 				//std::cout << test.getTime() << std::endl;
-				std::cout << playerShip->getPoints() << std::endl;
+				//std::cout << playerShip->getPoints() << std::endl;
 
-				if (levelTime.getTime() >= 5 && currentLevel < 2) // change time later to account for enemy spawns being delayed
+				if (levelTime.getTime() >= 22 && currentLevel < 2) // change time later to account for enemy spawns being delayed
 				{
 					currentLevel += 1;
 					levelTime.resetTimer();
 				}
-				else if (levelTime.getTime() >= 5 && currentLevel >= 2) {
+				else if (levelTime.getTime() >= 22 && currentLevel >= 2) {
 					currentState = 4;
 				}
 

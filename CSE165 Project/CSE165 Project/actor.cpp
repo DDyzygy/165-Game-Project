@@ -51,13 +51,12 @@ void actor::setHitPoints()
 void actor::movement(int randomizer)
 {
 	srand(time(0) * randomizer);
-	//srand(time(0));
 	texture->posY += speed;
 	if (texture->posX >= 20)
 	{
 		texture->posX -= rand() * (randomizer + 1) % 3 + 1;
 	}
-	if (texture->posX <= 780) 
+	if (texture->posX <= 780)
 	{
 		texture->posX += rand() * (randomizer + 1) % 3 + 1;
 	}

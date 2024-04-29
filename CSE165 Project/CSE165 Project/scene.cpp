@@ -17,6 +17,8 @@ scene::scene(SDL_Renderer* r) // Scene 1/Level 1
 	enemy* e5 = new enemy(r, 450, -50, 2.5);
 	enemy* e6 = new enemy(r, 300, -100, 2.5, 0);
 
+
+
 	actorList.push_back(e1);
 	actorList.push_back(e2);
 	actorList.push_back(e3);

@@ -14,6 +14,7 @@ public:
 	bool s;
 	bool d;
 	bool space;
+	bool click;
 
 	keyboardFunc();
 	~keyboardFunc();
