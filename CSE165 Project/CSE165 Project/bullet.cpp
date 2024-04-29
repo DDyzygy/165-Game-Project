@@ -4,7 +4,15 @@
 bullet::bullet(actor* ship, std::string bulletImage, SDL_Renderer* r, int _speed, int _side) {
 	speed = _speed;
 	side = _side;
-	texture = new images(bulletImage, r, 14, 31, ship->texture->posX, ship->texture->posY + side*ship->texture->sizeY - 50*side, 3); //sets the bullets starting point in front of ship firing
+	//texture = new images(bulletImage, r, 14, 31, ship->texture->posX, ship->texture->posY + side*ship->texture->sizeY - 50*side, 3); //sets the bullets starting point in front of ship firing
+	if (side == -1)
+	{
+		texture = new images(bulletImage, r, 14, 31, ship->texture->posX, ship->texture->posY + side * ship->texture->sizeY - 50 * side, 3);
+	}
+	else if (side == 1)
+	{
+		texture = new images(bulletImage, r, 16, 16, ship->texture->posX, ship->texture->posY + side * ship->texture->sizeY - 50 * side, 3);
+	}
 
 }
 

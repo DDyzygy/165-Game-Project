@@ -46,30 +46,22 @@ void renderer::backgroundMove(std::vector<images*> background, int speed) {
 	}
 }
 
-void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets) {
+void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets, int currentLevel) { //maybe pass in level currently on
 
 	if (playerShip->shooting == true && playerShip->getTime() >= playerShip->getCooldown()) {
-		bullets.emplace_back(new bullet(playerShip, "images/bullet.png", rndrer, 6, -1));
+		bullets.emplace_back(new bullet(playerShip, "images/PlayerBullet.png", rndrer, 6, -1));
 		playerShip->resetTimer();
 		playerShip->shooting = false;
 	}
-	for (int i = 0; i < scenes[0]->actorList.size(); i++) {
+	for (int i = 0; i < scenes[currentLevel]->actorList.size(); i++) {
 
-		if (scenes[0]->actorList[i]->getTime() >= scenes[0]->actorList[i]->getCooldown()) {
-			bullets.emplace_back(new bullet(scenes[0]->actorList[i], "images/EnemyBullet.png", rndrer, 6, 1));
-			scenes[0]->actorList[i]->resetTimer();
-			scenes[0]->actorList[i]->shooting = false;
+		if (scenes[currentLevel]->actorList[i]->getTime() >= scenes[currentLevel]->actorList[i]->getCooldown()) {
+			bullets.emplace_back(new bullet(scenes[currentLevel]->actorList[i], "images/EnemyBullet.png", rndrer, 6, 1));
+			scenes[currentLevel]->actorList[i]->resetTimer();
+			scenes[currentLevel]->actorList[i]->shooting = false;
 		}
 	}
 
-	/*
-	for (int i = 0; i < scenes[0]->actorList.size(); i++) {
-		if (scenes[0]->actorList[i]->shooting == true) {
-			bullets.emplace_back(new bullet(scenes[0]->actorList[i], rndrer, 3, 1));
-			scenes[0]->actorList[i]->shooting = false;
-		}
-	}
-	*/
 	for (int i = 0; i < bullets.size(); i++) {
 		bullets[i]->movement();
 	}
@@ -93,16 +85,16 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 		}
 
 
-		for (int j = 0; j < scenes[0]->actorList.size(); j++) { // REMEMBER TO ChANGE SCENES[0] TO whatever we use later
-			if (bullets[i]->hit(scenes[0]->actorList[j], 1)) {
+		for (int j = 0; j < scenes[currentLevel]->actorList.size(); j++) { // REMEMBER TO CHANGE scenes[0] TO whatever we use later
+			if (bullets[i]->hit(scenes[currentLevel]->actorList[j], 1)) {
 				auto temp = bullets.begin() + i;
 				delete* temp;
 				bullets.erase(temp); 
 				//lower actor j's health here
-				scenes[0]->actorList[j]->updateHitPoints();
-				if (!scenes[0]->actorList[j]->checkState())
+				scenes[currentLevel]->actorList[j]->updateHitPoints();
+				if (!scenes[currentLevel]->actorList[j]->checkState())
 				{
-					scenes[0]->actorList.erase(scenes[0]->actorList.begin() + j);
+					scenes[currentLevel]->actorList.erase(scenes[currentLevel]->actorList.begin() + j);
 				}
 				break;
 			}
@@ -118,6 +110,8 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 	std::vector<bullet*> bullets;
 	
 	Timer test;
+	Timer levelTime;
+	int currentLevel = 0; //Level starts at 1, index 0;
 
 	while (1)
 	{	
@@ -125,18 +119,47 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		SDL_SetRenderDrawColor(rndrer, 28, 9, 41, 212); // Set window background color
 		SDL_RenderClear(rndrer);
 		//background.show();
-		//second.show();
 		backgroundMove(textures, 3);
 		
-		shooting(scenes, playerShip, bullets);
+		shooting(scenes, playerShip, bullets, currentLevel);
 
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 3; i++) // up to 3 loads background textures + the points text
 		{
 			textures[i]->show();
 		}
 		
+		if (playerShip->getHealth() == 3)
+		{
+			textures[3]->show();
+			textures[4]->show();
+			textures[5]->show();
+		}
+		else if (playerShip->getHealth() == 2)
+		{
+			textures[3]->show();
+			textures[4]->show();
+			textures[8]->show();
+		}
+		else if (playerShip->getHealth() == 1)
+		{
+			textures[3]->show();
+			textures[7]->show();
+			textures[8]->show();
+		}
+		else if (playerShip->getHealth() > 1)
+		{
+			textures[6]->show();
+			textures[7]->show();
+			textures[8]->show();
+		}
 
-		//std::cout << test.getTime() << std::endl;
+		std::cout << test.getTime() << std::endl;
+
+		if (levelTime.getTime() >= 30 && currentLevel < 2) // change time later to account for enemy spawns being delayed
+		{
+			currentLevel += 1;
+			levelTime.resetTimer();
+		}
 
 		if (test.getTime() >= 5) {
 			test.resetTimer();
@@ -148,20 +171,30 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 
 
 		playerShip->texture->show();
-
-		for (int j = 0; j < scenes[0]->actorList.size(); j++)
+		//Determines what enemies show
+		for (int j = 0; j < scenes[currentLevel]->actorList.size(); j++)
 		{
-			if (!scenes[0]->actorList[j]->getShown())
+			if (!scenes[currentLevel]->actorList[j]->getShown())
 			{
-				scenes[0]->actorList[j]->texture->show();
-				scenes[0]->actorList[j]->setShown();
+				if (levelTime.getTime() >= 1 && j >= 0 && j <= 2)
+				{
+					scenes[currentLevel]->actorList[j]->texture->show();
+					scenes[currentLevel]->actorList[j]->setShown();
+				}
+				else if (levelTime.getTime() >= 8 && j >= 3 && j <= 5)
+				{
+					scenes[currentLevel]->actorList[j]->texture->show();
+					scenes[currentLevel]->actorList[j]->setShown();
+				}
+				//scenes[currentLevel]->actorList[j]->texture->show();
+				//scenes[currentLevel]->actorList[j]->setShown();
 			}
 			else
 			{
 				// use this with movement later so unshown enemies will stay in their spawn positions
-				scenes[0]->actorList[j]->texture->show();
-				scenes[0]->actorList[j]->shoot();
-				scenes[0]->actorList[j]->movement();
+				scenes[currentLevel]->actorList[j]->texture->show();
+				scenes[currentLevel]->actorList[j]->shoot();
+				scenes[currentLevel]->actorList[j]->movement();
 			}
 		
 		}

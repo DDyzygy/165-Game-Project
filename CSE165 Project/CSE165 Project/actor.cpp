@@ -38,6 +38,11 @@ void actor::updateHitPoints()
 	hitPoints -= 1;
 }
 
+void actor::setHitPoints()
+{
+	hitPoints = 0;
+}
+
 void actor::movement()
 {
 	srand(time(0));

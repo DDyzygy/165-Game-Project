@@ -81,17 +81,23 @@ int main(int argc, char** argv)
 		player* player1 = new player(r.getRenderer());
 
 		scene* level1 = new scene(r.getRenderer());
+		scene* level2 = new scene(r.getRenderer(), 2);
+		scene* level3 = new scene(r.getRenderer(), 2, 3);
 
 		scenes.push_back(level1);
+		scenes.push_back(level2);
+		scenes.push_back(level3);
 
 		//Need to create loop to keep everything going
-		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, 800, 0));
+		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, 800, 0));//0
 		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, -800, 0));
-		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 50, 40, 1));
+		textures.emplace_back(new images("images/PointsText.png", r.getRenderer(), 70, 70, 700, 40, 1));
+		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 50, 40, 1));//3
 		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 75, 40, 1));
 		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 100, 40, 1));
-		textures.push_back(background);
-		//textures.push_back(background);
+		textures.emplace_back(new images("images/NoHitPoint.png", r.getRenderer(), 60, 60, 50, 40, 1));
+		textures.emplace_back(new images("images/NoHitPoint.png", r.getRenderer(), 60, 60, 75, 40, 1));
+		textures.emplace_back(new images("images/NoHitPoint.png", r.getRenderer(), 60, 60, 100, 40, 1));//8
 
 
 		r.render_loop(user, player1, scenes, textures);

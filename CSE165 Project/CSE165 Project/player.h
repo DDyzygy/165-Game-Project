@@ -11,6 +11,7 @@ public:
 	virtual ~player();
 
 	int getSpeed();
+	int getHealth();
 
 };
 

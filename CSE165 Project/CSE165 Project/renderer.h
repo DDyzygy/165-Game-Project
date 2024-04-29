@@ -19,8 +19,8 @@ class renderer
 	int windowWidth;
 	int windowHeight;
 	Uint32 windowflags;
-	
 	Uint32 rendererFlags;
+	Timer sceneLength;
 
 public:
 
@@ -33,7 +33,7 @@ public:
 
 	void render_loop(keyboardFunc, player*, std::vector<scene*>, std::vector<images*> );
 
-	void shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets);
+	void shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets, int currentLevel);
 
 	void backgroundMove(std::vector<images*> background, int speed);
 

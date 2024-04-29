@@ -25,6 +25,7 @@ public:
 
 	bool checkState();
 	void updateHitPoints();
+	void setHitPoints();
 	void movement();
 	void shoot();
 	void setShown();
