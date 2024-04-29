@@ -177,6 +177,7 @@
     <Image Include="images\spacebackgrounddouble.jpg" />
     <Image Include="images\SpaceRock.png" />
     <Image Include="images\StartButton.png" />
+    <Image Include="images\VictoryScreen.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

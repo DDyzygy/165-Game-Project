@@ -89,7 +89,7 @@ int main(int argc, char** argv)
 
 		//Need to create loop to keep everything going
 		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, 800, 0));//0
-		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1600, 400, -800, 0));
+		textures.emplace_back(new images("images/spacebackgrounddouble.jpg", r.getRenderer(), 800, 1620, 400, -800, 0));
 		textures.emplace_back(new images("images/PointsText.png", r.getRenderer(), 70, 70, 700, 40, 1));
 		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 50, 40, 1));//3
 		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 75, 40, 1));
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
 		textures.emplace_back(new images("images/9.png", r.getRenderer(), 70, 70, 750, 40, 1));//18
 		textures.emplace_back(new images("images/StartButton.png", r.getRenderer(), 400, 180, 400, 400, 1));//19
 		textures.emplace_back(new images("images/GAMEOVER.png", r.getRenderer(), 240, 36, 400, 400, 1));//20
-
+		textures.emplace_back(new images("images/VictoryScreen.png", r.getRenderer(), 200, 66, 400, 400, 1));//21
 
 
 

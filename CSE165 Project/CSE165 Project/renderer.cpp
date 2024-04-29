@@ -66,6 +66,10 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 		bullets[i]->movement();
 	}
 
+
+
+
+
 	for (int i = 0; i < bullets.size(); i++) {
 		if (bullets[i]->hit(playerShip, -1)) {
 			auto temp = bullets.begin() + i;
@@ -264,10 +268,13 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 				//std::cout << test.getTime() << std::endl;
 				std::cout << playerShip->getPoints() << std::endl;
 
-				if (levelTime.getTime() >= 24 && currentLevel < 2) // change time later to account for enemy spawns being delayed
+				if (levelTime.getTime() >= 5 && currentLevel < 2) // change time later to account for enemy spawns being delayed
 				{
 					currentLevel += 1;
 					levelTime.resetTimer();
+				}
+				else if (levelTime.getTime() >= 5 && currentLevel >= 2) {
+					currentState = 4;
 				}
 
 				if (test.getTime() >= 5) {
@@ -314,11 +321,12 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 				for (int i = 0; i < bullets.size(); i++) {
 					bullets[i]->texture->show();
 				}
+
+				updatePoints(playerShip, textures);
+
 				if (playerShip->getHealth() <= 0) {
 					currentState = 3;
 				}
-
-				updatePoints(playerShip, textures);
 
 
 				break;
@@ -333,6 +341,15 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 
 				break;
 
+			case 4:
+				for (int i = 0; i < 2; i++) // up to 2 loads background textures
+				{
+					textures[i]->show();
+				}
+				textures[21]->show();
+				backgroundMove(textures, 1);
+
+				break;
 		}
 
 		
