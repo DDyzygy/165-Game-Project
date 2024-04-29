@@ -56,7 +56,7 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 	for (int i = 0; i < scenes[currentLevel]->actorList.size(); i++) {
 
 		if (scenes[currentLevel]->actorList[i]->getTime() >= scenes[currentLevel]->actorList[i]->getCooldown()) {
-			bullets.emplace_back(new bullet(scenes[currentLevel]->actorList[i], "images/EnemyBullet.png", rndrer, 6, 1));
+			bullets.emplace_back(new bullet(scenes[currentLevel]->actorList[i], "images/EnemyBullet.png", rndrer, 3, 1));
 			scenes[currentLevel]->actorList[i]->resetTimer();
 			scenes[currentLevel]->actorList[i]->shooting = false;
 		}
@@ -95,6 +95,7 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 				if (!scenes[currentLevel]->actorList[j]->checkState())
 				{
 					scenes[currentLevel]->actorList.erase(scenes[currentLevel]->actorList.begin() + j);
+					//playerShip->setPoints(scenes[currentLevel]->actorList[j]->getPoints());
 				}
 				break;
 			}
@@ -102,7 +103,73 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 	}
 }
 
+void renderer::updatePoints(player*& playerShip, std::vector<images*> textures)
+{
+	//block of if statements because i am so good at coding
+	// create 10
+	if (playerShip->getPoints() == 0)
+	{
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 1)
+	{
+		textures[10]->show();
+		textures[9]->posX = 760;
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 2)
+	{
+		textures[11]->show();
+		textures[9]->posX = 760;
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 3)
+	{
+		textures[12]->show();
+		
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 4)
+	{
+		textures[13]->show();
+		
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 5)
+	{
+		textures[14]->show();
+		
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 6)
+	{
+		textures[15]->show();
+		
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 7)
+	{
+		textures[16]->show();
+		
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 8)
+	{
+		textures[17]->show();
+		
+		textures[9]->show();
+	}
+	else if (playerShip->getPoints() / 10 == 9)
+	{
+		textures[18]->show();
+		
+		textures[9]->show();
+	}
+	//textures[10]->show();
 
+	//textures[9]->show();
+
+}
 
 void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<scene*> scenes, std::vector<images*> textures)
 {
@@ -153,9 +220,12 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 			textures[8]->show();
 		}
 
-		std::cout << test.getTime() << std::endl;
+		//updatePoints(playerShip, textures);
 
-		if (levelTime.getTime() >= 30 && currentLevel < 2) // change time later to account for enemy spawns being delayed
+		//std::cout << test.getTime() << std::endl;
+		std::cout << playerShip->getPoints() << std::endl;
+
+		if (levelTime.getTime() >= 24 && currentLevel < 2) // change time later to account for enemy spawns being delayed
 		{
 			currentLevel += 1;
 			levelTime.resetTimer();
@@ -174,6 +244,7 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		//Determines what enemies show
 		for (int j = 0; j < scenes[currentLevel]->actorList.size(); j++)
 		{
+			double random = rand() * (j + 1) % 10;
 			if (!scenes[currentLevel]->actorList[j]->getShown())
 			{
 				if (levelTime.getTime() >= 1 && j >= 0 && j <= 2)
@@ -181,7 +252,7 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 					scenes[currentLevel]->actorList[j]->texture->show();
 					scenes[currentLevel]->actorList[j]->setShown();
 				}
-				else if (levelTime.getTime() >= 8 && j >= 3 && j <= 5)
+				else if (levelTime.getTime() >= 10 && j >= 3 && j <= 5)
 				{
 					scenes[currentLevel]->actorList[j]->texture->show();
 					scenes[currentLevel]->actorList[j]->setShown();
@@ -194,7 +265,9 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 				// use this with movement later so unshown enemies will stay in their spawn positions
 				scenes[currentLevel]->actorList[j]->texture->show();
 				scenes[currentLevel]->actorList[j]->shoot();
-				scenes[currentLevel]->actorList[j]->movement();
+				scenes[currentLevel]->actorList[j]->movement(random);
+				//scenes[currentLevel]->actorList[j]->movement();
+				
 			}
 		
 		}

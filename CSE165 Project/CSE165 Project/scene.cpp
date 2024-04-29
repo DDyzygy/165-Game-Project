@@ -10,12 +10,12 @@ scene::scene(SDL_Renderer* r) // Scene 1/Level 1
 {
 	timeDelay = 2;
 
-	enemy* e1 = new enemy(r, 300, -50, 1);
-	enemy* e2 = new enemy(r, 400, -50, 1);
-	enemy* e3 = new enemy(r, 500, -50, 1);
-	enemy* e4 = new enemy(r, 250, -50, 1);
-	enemy* e5 = new enemy(r, 450, -50, 1);
-	enemy* e6 = new enemy(r, 400, -100, 1, 0);
+	enemy* e1 = new enemy(r, 300, -50, 2.5);
+	enemy* e2 = new enemy(r, 400, -50, 2.5);
+	enemy* e3 = new enemy(r, 500, -50, 2.5);
+	enemy* e4 = new enemy(r, 250, -50, 2.5);
+	enemy* e5 = new enemy(r, 450, -50, 2.5);
+	enemy* e6 = new enemy(r, 300, -100, 2.5, 0);
 
 	actorList.push_back(e1);
 	actorList.push_back(e2);
@@ -28,12 +28,12 @@ scene::scene(SDL_Renderer* r) // Scene 1/Level 1
 
 scene::scene(SDL_Renderer* r, int i) // Scene 2/Level 2
 {
-	enemy* e1 = new enemy(r, 100, -50, 1);
-	enemy* e2 = new enemy(r, 200, -50, 1);
-	enemy* e3 = new enemy(r, 400, -50, 1);
-	enemy* e4 = new enemy(r, 400, -100, 1, 0);
-	enemy* e5 = new enemy(r, 500, -100, 1, 0);
-	enemy* e6 = new enemy(r, 300, -100, 1, 0);
+	enemy* e1 = new enemy(r, 100, -50, 2.5);
+	enemy* e2 = new enemy(r, 200, -50, 2.5);
+	enemy* e3 = new enemy(r, 400, -50, 2.5);
+	enemy* e4 = new enemy(r, 400, -100, 2.5, 0);
+	enemy* e5 = new enemy(r, 500, -100, 2.5, 0);
+	enemy* e6 = new enemy(r, 300, -100, 2.5, 0);
 
 	actorList.push_back(e1);
 	actorList.push_back(e2);
@@ -46,12 +46,12 @@ scene::scene(SDL_Renderer* r, int i) // Scene 2/Level 2
 
 scene::scene(SDL_Renderer* r, int i, int j) // Scene 3/Level 3
 {
-	enemy* e1 = new enemy(r, 100, -50, 1);
-	enemy* e2 = new enemy(r, 400, -100, 1, 0);
-	enemy* e3 = new enemy(r, 400, -100, 1, 0);
-	enemy* e4 = new enemy(r, 400, -100, 1, 0);
-	enemy* e5 = new enemy(r, 400, -100, 1, 0);
-	enemy* e6 = new enemy(r, 400, -100, 1, 0);
+	enemy* e1 = new enemy(r, 400, -50, 2.5);
+	enemy* e2 = new enemy(r, 550, -150, 2.5, 0);
+	enemy* e3 = new enemy(r, 250, -150, 2.5, 0);
+	enemy* e4 = new enemy(r, 200, -100, 2.5, 0);
+	enemy* e5 = new enemy(r, 400, -100, 2.5, 0);
+	enemy* e6 = new enemy(r, 600, -100, 2.5, 0);
 
 	actorList.push_back(e1);
 	actorList.push_back(e2);

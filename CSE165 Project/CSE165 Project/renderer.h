@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <vector>
 #include <algorithm>
+#include <random>
 #include "keyboardFunc.h"
 #include "scene.h"
 #include "images.h"
@@ -34,6 +35,8 @@ public:
 	void render_loop(keyboardFunc, player*, std::vector<scene*>, std::vector<images*> );
 
 	void shooting(std::vector<scene*> &scenes, player* &playerShip, std::vector<bullet*> &bullets, int currentLevel);
+
+	void updatePoints(player* &playerShip, std::vector<images*>);
 
 	void backgroundMove(std::vector<images*> background, int speed);
 

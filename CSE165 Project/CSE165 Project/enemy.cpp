@@ -15,7 +15,7 @@ enemy::enemy(SDL_Renderer* r, int x, int y, double _cooldown)
 	cooldown = _cooldown;
 	hitPoints = 3;
 	speed = 1;
-
+	points = 10;
 }
 
 enemy::enemy(SDL_Renderer* r, int x, int y, double _cooldown, int ignorethis)
@@ -24,7 +24,7 @@ enemy::enemy(SDL_Renderer* r, int x, int y, double _cooldown, int ignorethis)
 	cooldown = _cooldown;
 	hitPoints = 6;
 	speed = 1;
-
+	points = 20;
 }
 
 void enemy::isShooting() {

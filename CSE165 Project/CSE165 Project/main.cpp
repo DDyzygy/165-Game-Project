@@ -77,7 +77,6 @@ int main(int argc, char** argv)
 		std::vector<scene*> scenes;
 		r.render_start();
 		//images* ship = new images("images/PlayerShip1.png", r.getRenderer(), 100, 100, 400, 650,1);
-		images* background = new images("images/spacebackground.jpg", r.getRenderer(), 800, 800, 400, 400,1);
 		player* player1 = new player(r.getRenderer());
 
 		scene* level1 = new scene(r.getRenderer());
@@ -98,6 +97,17 @@ int main(int argc, char** argv)
 		textures.emplace_back(new images("images/NoHitPoint.png", r.getRenderer(), 60, 60, 50, 40, 1));
 		textures.emplace_back(new images("images/NoHitPoint.png", r.getRenderer(), 60, 60, 75, 40, 1));
 		textures.emplace_back(new images("images/NoHitPoint.png", r.getRenderer(), 60, 60, 100, 40, 1));//8
+		textures.emplace_back(new images("images/0.png", r.getRenderer(), 70, 70, 750, 40, 1));//9 -- 0.png keep size and y value, just move default x
+		textures.emplace_back(new images("images/1.png", r.getRenderer(), 70, 70, 750, 40, 1));//10
+		textures.emplace_back(new images("images/2.png", r.getRenderer(), 70, 70, 750, 40, 1));//11
+		textures.emplace_back(new images("images/3.png", r.getRenderer(), 70, 70, 750, 40, 1));//12
+		textures.emplace_back(new images("images/4.png", r.getRenderer(), 70, 70, 750, 40, 1));//13
+		textures.emplace_back(new images("images/5.png", r.getRenderer(), 70, 70, 750, 40, 1));//14
+		textures.emplace_back(new images("images/6.png", r.getRenderer(), 70, 70, 750, 40, 1));//15
+		textures.emplace_back(new images("images/7.png", r.getRenderer(), 70, 70, 750, 40, 1));//16
+		textures.emplace_back(new images("images/8.png", r.getRenderer(), 70, 70, 750, 40, 1));//17
+		textures.emplace_back(new images("images/9.png", r.getRenderer(), 70, 70, 750, 40, 1));//18
+
 
 
 		r.render_loop(user, player1, scenes, textures);

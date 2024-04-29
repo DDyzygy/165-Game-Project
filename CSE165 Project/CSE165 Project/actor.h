@@ -10,6 +10,7 @@ protected:
 
 	//images* texture;
 	int hitPoints;
+	int points;
 	double speed;
 	bool shown;
 	Timer currentCooldown;
@@ -23,10 +24,11 @@ public:
 	actor(SDL_Renderer*);
 	virtual ~actor();
 
+	int getPoints();
 	bool checkState();
 	void updateHitPoints();
 	void setHitPoints();
-	void movement();
+	void movement(int randomizer);
 	void shoot();
 	void setShown();
 	bool getShown();
