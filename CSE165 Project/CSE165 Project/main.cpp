@@ -107,6 +107,10 @@ int main(int argc, char** argv)
 		textures.emplace_back(new images("images/7.png", r.getRenderer(), 70, 70, 750, 40, 1));//16
 		textures.emplace_back(new images("images/8.png", r.getRenderer(), 70, 70, 750, 40, 1));//17
 		textures.emplace_back(new images("images/9.png", r.getRenderer(), 70, 70, 750, 40, 1));//18
+		textures.emplace_back(new images("images/StartButton.png", r.getRenderer(), 400, 180, 400, 400, 1));//19
+		textures.emplace_back(new images("images/GAMEOVER.png", r.getRenderer(), 240, 36, 400, 400, 1));//20
+
+
 
 
 

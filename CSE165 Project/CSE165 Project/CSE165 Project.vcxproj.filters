@@ -148,5 +148,8 @@
     <Image Include="images\PointsText.png">
       <Filter>Resource Files\images</Filter>
     </Image>
+    <Image Include="images\GAMEOVER.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

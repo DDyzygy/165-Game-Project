@@ -166,6 +166,7 @@
     <Image Include="images\9.png" />
     <Image Include="images\bullet.png" />
     <Image Include="images\EnemyBullet.png" />
+    <Image Include="images\GAMEOVER.png" />
     <Image Include="images\MajorEnemy.png" />
     <Image Include="images\MinorEnemy.png" />
     <Image Include="images\NoHitPoint.png" />

@@ -11,6 +11,17 @@
       "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -63,19 +74,8 @@
       "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\images.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{62B71271-FCE7-4C9C-94DD-6905A08E13DA}|CSE165 Project\\CSE165 Project.vcxproj|solutionrelative:CSE165 Project\\renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -85,47 +85,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Timer.cpp",
-              "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.cpp",
-              "RelativeDocumentMoniker": "CSE165 Project\\Timer.cpp",
-              "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.cpp",
-              "RelativeToolTip": "CSE165 Project\\Timer.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-28T21:55:27.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Timer.h",
-              "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.h",
-              "RelativeDocumentMoniker": "CSE165 Project\\Timer.h",
-              "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.h",
-              "RelativeToolTip": "CSE165 Project\\Timer.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-28T21:54:22.331Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "vector",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
-              "ViewState": "AQIAAE0HAAAAAAAAAAAvwGQHAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-28T06:15:02.132Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "player.h",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\player.h",
               "RelativeDocumentMoniker": "CSE165 Project\\player.h",
@@ -137,19 +101,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "player.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\player.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\player.cpp",
               "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\player.cpp",
               "RelativeToolTip": "CSE165 Project\\player.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-28T05:50:40.942Z"
+              "WhenOpened": "2024-04-28T05:50:40.942Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "scene.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\scene.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\scene.cpp",
@@ -161,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "bullet.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\bullet.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\bullet.cpp",
@@ -173,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "bullet.h",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\bullet.h",
               "RelativeDocumentMoniker": "CSE165 Project\\bullet.h",
@@ -185,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "actor.h",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\actor.h",
               "RelativeDocumentMoniker": "CSE165 Project\\actor.h",
@@ -197,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "actor.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\actor.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\actor.cpp",
@@ -209,7 +174,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ViewState": "AQIAAFwHAAAAAAAAAAAvwGQHAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-28T06:15:02.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Timer.h",
+              "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.h",
+              "RelativeDocumentMoniker": "CSE165 Project\\Timer.h",
+              "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.h",
+              "RelativeToolTip": "CSE165 Project\\Timer.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-28T21:54:22.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "enemy.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\enemy.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\enemy.cpp",
@@ -221,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "enemy.h",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\enemy.h",
               "RelativeDocumentMoniker": "CSE165 Project\\enemy.h",
@@ -233,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "images.h",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\images.h",
               "RelativeDocumentMoniker": "CSE165 Project\\images.h",
@@ -245,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "images.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\images.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\images.cpp",
@@ -263,13 +253,26 @@
               "RelativeDocumentMoniker": "CSE165 Project\\main.cpp",
               "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\main.cpp",
               "RelativeToolTip": "CSE165 Project\\main.cpp",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAEsAAAAdAAAA",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAcwHAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-25T10:16:43.612Z"
+              "WhenOpened": "2024-04-25T10:16:43.612Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
+              "Title": "Timer.cpp",
+              "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.cpp",
+              "RelativeDocumentMoniker": "CSE165 Project\\Timer.cpp",
+              "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\Timer.cpp",
+              "RelativeToolTip": "CSE165 Project\\Timer.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-28T21:55:27.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "keyboardFunc.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\keyboardFunc.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\keyboardFunc.cpp",
@@ -281,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "keyboardFunc.h",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\keyboardFunc.h",
               "RelativeDocumentMoniker": "CSE165 Project\\keyboardFunc.h",
@@ -293,28 +296,29 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "renderer.h",
+              "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.h",
+              "RelativeDocumentMoniker": "CSE165 Project\\renderer.h",
+              "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.h",
+              "RelativeToolTip": "CSE165 Project\\renderer.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-25T10:16:43.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "renderer.cpp",
               "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.cpp",
               "RelativeDocumentMoniker": "CSE165 Project\\renderer.cpp",
               "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.cpp",
               "RelativeToolTip": "CSE165 Project\\renderer.cpp",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAAAD0AAAADAAAA",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAAAM0AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-25T10:16:43.623Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "renderer.h",
-              "DocumentMoniker": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.h",
-              "RelativeDocumentMoniker": "CSE165 Project\\renderer.h",
-              "ToolTip": "C:\\Users\\conno\\Documents\\GitHub\\CSE-165-Game-Project\\CSE165 Project\\CSE165 Project\\renderer.h",
-              "RelativeToolTip": "CSE165 Project\\renderer.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-25T10:16:43.701Z"
             }
           ]
         }

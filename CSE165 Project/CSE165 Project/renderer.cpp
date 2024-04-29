@@ -171,6 +171,28 @@ void renderer::updatePoints(player*& playerShip, std::vector<images*> textures)
 
 }
 
+bool renderer::buttonPress(images* button) {
+
+	SDL_Point mouse;
+
+	//SDL_PumpEvents();  // make sure we have the latest mouse state.
+
+	SDL_GetMouseState(&mouse.x, &mouse.y);
+
+	const SDL_Point* currentPos = &mouse;
+	const SDL_Rect* buttonRect = &button->area;
+
+	if (SDL_PointInRect(currentPos, buttonRect)) {
+
+		return true;
+	}
+
+	return false;
+
+
+}
+
+
 void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<scene*> scenes, std::vector<images*> textures)
 {
 
@@ -178,6 +200,7 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 	
 	Timer test;
 	Timer levelTime;
+	int currentState = 1;
 	int currentLevel = 0; //Level starts at 1, index 0;
 
 	while (1)
@@ -186,95 +209,132 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		SDL_SetRenderDrawColor(rndrer, 28, 9, 41, 212); // Set window background color
 		SDL_RenderClear(rndrer);
 		//background.show();
-		backgroundMove(textures, 3);
-		
-		shooting(scenes, playerShip, bullets, currentLevel);
 
-		for (int i = 0; i < 3; i++) // up to 3 loads background textures + the points text
-		{
-			textures[i]->show();
-		}
-		
-		if (playerShip->getHealth() == 3)
-		{
-			textures[3]->show();
-			textures[4]->show();
-			textures[5]->show();
-		}
-		else if (playerShip->getHealth() == 2)
-		{
-			textures[3]->show();
-			textures[4]->show();
-			textures[8]->show();
-		}
-		else if (playerShip->getHealth() == 1)
-		{
-			textures[3]->show();
-			textures[7]->show();
-			textures[8]->show();
-		}
-		else if (playerShip->getHealth() > 1)
-		{
-			textures[6]->show();
-			textures[7]->show();
-			textures[8]->show();
-		}
-
-		//updatePoints(playerShip, textures);
-
-		//std::cout << test.getTime() << std::endl;
-		std::cout << playerShip->getPoints() << std::endl;
-
-		if (levelTime.getTime() >= 24 && currentLevel < 2) // change time later to account for enemy spawns being delayed
-		{
-			currentLevel += 1;
-			levelTime.resetTimer();
-		}
-
-		if (test.getTime() >= 5) {
-			test.resetTimer();
-		}
-
-
-
-
-
-
-		playerShip->texture->show();
-		//Determines what enemies show
-		for (int j = 0; j < scenes[currentLevel]->actorList.size(); j++)
-		{
-			double random = rand() * (j + 1) % 10;
-			if (!scenes[currentLevel]->actorList[j]->getShown())
-			{
-				if (levelTime.getTime() >= 1 && j >= 0 && j <= 2)
+		switch (currentState) {
+			case 1:
+				for (int i = 0; i < 2; i++) // up to 2 loads background textures
 				{
-					scenes[currentLevel]->actorList[j]->texture->show();
-					scenes[currentLevel]->actorList[j]->setShown();
+					textures[i]->show();
 				}
-				else if (levelTime.getTime() >= 10 && j >= 3 && j <= 5)
+				textures[19]->show();
+				backgroundMove(textures, 1);
+				if (buttonPress(textures[19])) {
+					currentState = 2;
+				}
+
+				break;
+
+			case 2:
+				backgroundMove(textures, 3);
+
+				shooting(scenes, playerShip, bullets, currentLevel);
+
+				for (int i = 0; i < 3; i++) // up to 3 loads background textures + the points text
 				{
-					scenes[currentLevel]->actorList[j]->texture->show();
-					scenes[currentLevel]->actorList[j]->setShown();
+					textures[i]->show();
 				}
-				//scenes[currentLevel]->actorList[j]->texture->show();
-				//scenes[currentLevel]->actorList[j]->setShown();
-			}
-			else
-			{
-				// use this with movement later so unshown enemies will stay in their spawn positions
-				scenes[currentLevel]->actorList[j]->texture->show();
-				scenes[currentLevel]->actorList[j]->shoot();
-				scenes[currentLevel]->actorList[j]->movement(random);
-				//scenes[currentLevel]->actorList[j]->movement();
-				
-			}
-		
+
+				if (playerShip->getHealth() == 3)
+				{
+					textures[3]->show();
+					textures[4]->show();
+					textures[5]->show();
+				}
+				else if (playerShip->getHealth() == 2)
+				{
+					textures[3]->show();
+					textures[4]->show();
+					textures[8]->show();
+				}
+				else if (playerShip->getHealth() == 1)
+				{
+					textures[3]->show();
+					textures[7]->show();
+					textures[8]->show();
+				}
+				else if (playerShip->getHealth() > 1)
+				{
+					textures[6]->show();
+					textures[7]->show();
+					textures[8]->show();
+				}
+
+				//updatePoints(playerShip, textures);
+
+				//std::cout << test.getTime() << std::endl;
+				std::cout << playerShip->getPoints() << std::endl;
+
+				if (levelTime.getTime() >= 24 && currentLevel < 2) // change time later to account for enemy spawns being delayed
+				{
+					currentLevel += 1;
+					levelTime.resetTimer();
+				}
+
+				if (test.getTime() >= 5) {
+					test.resetTimer();
+				}
+
+
+
+
+
+
+				playerShip->texture->show();
+				//Determines what enemies show
+				for (int j = 0; j < scenes[currentLevel]->actorList.size(); j++)
+				{
+					double random = rand() * (j + 1) % 10;
+					if (!scenes[currentLevel]->actorList[j]->getShown())
+					{
+						if (levelTime.getTime() >= 1 && j >= 0 && j <= 2)
+						{
+							scenes[currentLevel]->actorList[j]->texture->show();
+							scenes[currentLevel]->actorList[j]->setShown();
+						}
+						else if (levelTime.getTime() >= 10 && j >= 3 && j <= 5)
+						{
+							scenes[currentLevel]->actorList[j]->texture->show();
+							scenes[currentLevel]->actorList[j]->setShown();
+						}
+						//scenes[currentLevel]->actorList[j]->texture->show();
+						//scenes[currentLevel]->actorList[j]->setShown();
+					}
+					else
+					{
+						// use this with movement later so unshown enemies will stay in their spawn positions
+						scenes[currentLevel]->actorList[j]->texture->show();
+						scenes[currentLevel]->actorList[j]->shoot();
+						scenes[currentLevel]->actorList[j]->movement(random);
+						//scenes[currentLevel]->actorList[j]->movement();
+
+					}
+
+				}
+
+				for (int i = 0; i < bullets.size(); i++) {
+					bullets[i]->texture->show();
+				}
+				if (playerShip->getHealth() <= 0) {
+					currentState = 3;
+				}
+
+				updatePoints(playerShip, textures);
+
+
+				break;
+
+			case 3:
+				for (int i = 0; i < 2; i++) // up to 2 loads background textures
+				{
+					textures[i]->show();
+				}
+				textures[20]->show();
+				backgroundMove(textures, 1);
+
+				break;
+
 		}
 
-		for (int i = 0; i < bullets.size(); i++) {
-			bullets[i]->texture->show();
-		}
 		
 		//======================================
 		// Replace this with keyboardFunc somehow 

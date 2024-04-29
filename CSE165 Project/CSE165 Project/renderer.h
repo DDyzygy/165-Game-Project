@@ -38,6 +38,8 @@ public:
 
 	void updatePoints(player* &playerShip, std::vector<images*>);
 
+	bool buttonPress(images* button);
+
 	void backgroundMove(std::vector<images*> background, int speed);
 
 	void render_start();

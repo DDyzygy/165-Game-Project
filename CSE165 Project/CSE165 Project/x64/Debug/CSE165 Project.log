@@ -1,21 +1,3 @@
-﻿  actor.cpp
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(53,16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(55,19): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(68,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\actor.cpp(87,9): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  bullet.cpp
-  enemy.cpp
-  images.cpp
-  keyboardFunc.cpp
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(109,44): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(121,44): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(133,44): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\keyboardFunc.cpp(145,44): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  main.cpp
-  player.cpp
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\player.cpp(26,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-  renderer.cpp
-C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\renderer.cpp(268,50): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  scene.cpp
-  Generating Code...
-  CSE165 Project.vcxproj -> C:\Users\Andrew Hom\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\x64\Debug\CSE165 Project.exe
+﻿  renderer.cpp
+C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\CSE165 Project\renderer.cpp(307,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  CSE165 Project.vcxproj -> C:\Users\conno\Documents\GitHub\CSE-165-Game-Project\CSE165 Project\x64\Debug\CSE165 Project.exe
