@@ -37,6 +37,8 @@ public:
 
 	void backgroundMove(std::vector<images*> background, int speed);
 
+	bool buttonPress(images* button);
+
 	void render_start();
 
 };

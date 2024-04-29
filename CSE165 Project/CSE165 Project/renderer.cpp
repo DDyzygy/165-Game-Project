@@ -60,16 +60,14 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 			scenes[0]->actorList[i]->resetTimer();
 			scenes[0]->actorList[i]->shooting = false;
 		}
+
+		if (SDL_HasIntersection(&(playerShip->texture->area), &(scenes[0]->actorList[i]->texture->area))) { //checks if the area of the bullet is intersecting with any ships and if they are on the same side (no friendly fire!)
+			std::cout << "nuts" << std::endl;
+		}
+
+
 	}
 
-	/*
-	for (int i = 0; i < scenes[0]->actorList.size(); i++) {
-		if (scenes[0]->actorList[i]->shooting == true) {
-			bullets.emplace_back(new bullet(scenes[0]->actorList[i], rndrer, 3, 1));
-			scenes[0]->actorList[i]->shooting = false;
-		}
-	}
-	*/
 	for (int i = 0; i < bullets.size(); i++) {
 		bullets[i]->movement();
 	}
@@ -111,13 +109,34 @@ void renderer::shooting(std::vector<scene*> &scenes, player* &playerShip, std::v
 }
 
 
+bool renderer::buttonPress(images* button) {
+	
+	SDL_Point mouse;
+
+	//SDL_PumpEvents();  // make sure we have the latest mouse state.
+
+	SDL_GetMouseState(&mouse.x, &mouse.y);
+
+	const SDL_Point *currentPos = &mouse;
+	const SDL_Rect *buttonRect = &button->area;
+
+	if (SDL_PointInRect(currentPos, buttonRect)) {
+
+		return true;
+	}
+
+	return false;
+	
+	
+}
+
 
 void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<scene*> scenes, std::vector<images*> textures)
 {
 
 	std::vector<bullet*> bullets;
-	
-	Timer test;
+
+	int currentScene = 1;
 
 	while (1)
 	{	
@@ -126,54 +145,71 @@ void renderer::render_loop(keyboardFunc action, player* playerShip, std::vector<
 		SDL_RenderClear(rndrer);
 		//background.show();
 		//second.show();
-		backgroundMove(textures, 3);
-		
-		shooting(scenes, playerShip, bullets);
 
-		for (int i = 0; i < 5; i++)
-		{
-			textures[i]->show();
+		switch (currentScene) {
+			case 1:
+				backgroundMove(textures, 1);
+				
+				for (int i = 0; i < 2; i++)
+				{
+					textures[i]->show();
+				}
+				textures[5]->show();
+				action.input(playerShip);
+
+				if (buttonPress(textures[5])) {
+					std::cout << "balls" << std::endl;
+					currentScene = 2;
+				}
+
+				break;
+
+			case 2:
+				backgroundMove(textures, 3);
+
+				for (int i = 0; i < 5; i++)
+				{
+					textures[i]->show();
+				}
+
+				shooting(scenes, playerShip, bullets);
+
+				for (int j = 0; j < scenes[0]->actorList.size(); j++)
+				{
+					if (!scenes[0]->actorList[j]->getShown())
+					{
+						scenes[0]->actorList[j]->texture->show();
+						scenes[0]->actorList[j]->setShown();
+					}
+					else
+					{
+						// use this with movement later so unshown enemies will stay in their spawn positions
+						scenes[0]->actorList[j]->texture->show();
+						scenes[0]->actorList[j]->shoot();
+						scenes[0]->actorList[j]->movement();
+					}
+
+				}
+
+				for (int i = 0; i < bullets.size(); i++) {
+					bullets[i]->texture->show();
+				}
+
+				playerShip->texture->show();
+
+				action.input(playerShip);
+
+
+				break;
+
 		}
-		
-
-		//std::cout << test.getTime() << std::endl;
-
-		if (test.getTime() >= 5) {
-			test.resetTimer();
-		}
 
 
 
-
-
-
-		playerShip->texture->show();
-
-		for (int j = 0; j < scenes[0]->actorList.size(); j++)
-		{
-			if (!scenes[0]->actorList[j]->getShown())
-			{
-				scenes[0]->actorList[j]->texture->show();
-				scenes[0]->actorList[j]->setShown();
-			}
-			else
-			{
-				// use this with movement later so unshown enemies will stay in their spawn positions
-				scenes[0]->actorList[j]->texture->show();
-				scenes[0]->actorList[j]->shoot();
-				scenes[0]->actorList[j]->movement();
-			}
-		
-		}
-
-		for (int i = 0; i < bullets.size(); i++) {
-			bullets[i]->texture->show();
-		}
 		
 		//======================================
 		// Replace this with keyboardFunc somehow 
 		//maybe load a scene class into the render loop?
-		action.input(playerShip);
 
 		//======================================
 		SDL_RenderPresent(rndrer);

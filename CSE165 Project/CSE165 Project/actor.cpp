@@ -42,8 +42,12 @@ void actor::movement()
 {
 	srand(time(0));
 	texture->posY += speed;
-	texture->posX += rand() % 3 + 1;
-	texture->posX -= rand() % 3 + 1;
+	if (texture->posX <= 800) {
+		texture->posX += rand() % 3 + 1;
+	}
+	if (texture->posX >= 0) {
+		texture->posX -= rand() % 3 + 1;
+	}
 }
 
 void actor::shoot()

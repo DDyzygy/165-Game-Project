@@ -90,6 +90,7 @@ int main(int argc, char** argv)
 		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 50, 40, 1));
 		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 75, 40, 1));
 		textures.emplace_back(new images("images/OneHitPoint.png", r.getRenderer(), 60, 60, 100, 40, 1));
+		textures.emplace_back(new images("images/StartButton.png", r.getRenderer(), 300, 150, 400, 400, 1));
 		textures.push_back(background);
 		//textures.push_back(background);
 
